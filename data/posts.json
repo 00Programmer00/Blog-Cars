@@ -1,0 +1,16 @@
+{
+  "posts":
+  [
+    {
+      "title": "Lamborgini",
+      "image": "/image/Lamborgini.jpg",
+      "description": "Cars"
+    },
+    {
+      "title": "BMW",
+      "image": "/image/BMW.jpg",
+      "description": "Cars"
+    }
+  ]
+}
+
