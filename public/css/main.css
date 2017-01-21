@@ -1,0 +1,48 @@
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    background-image: url("/image/bg.jpg");
+    background-size: cover;
+    margin-bottom: 10vh;
+}
+#footer {
+    bottom: 0;
+    width: 100%;
+    height: 10vh;
+}
+
+.post{
+    background-color: mediumpurple;
+    text-align: center;
+    /*border: 4px solid black;*/
+    margin-right: 90px;
+    margin-top: 50px;
+}
+
+.post:hover{
+    border: 2px solid red;
+    cursor: pointer;
+}
+
+.post p{
+    margin-top: 20px;
+    text-align: justify;
+}
+
+#header{
+
+    background-size: cover;
+}
+
+#authorization{
+    text-align: right;
+    margin-top: 30px;
+}
+
+#search{
+    margin-top: 30px;
+}
+

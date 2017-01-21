@@ -4,12 +4,17 @@
     {
       "title": "Lamborgini",
       "image": "/image/Lamborgini.jpg",
-      "description": "Cars"
+      "description": "Forget the idea of performance you are used to. The Aventador Coupé has been engineered to revolutionize this concept and establish a new benchmark in the segment of super sports cars and beyond. This car aims to bring the future forward. This is a true supercar legend in the making, which combines the tradition of the Lamborghini brand with a level of innovation which takes the House of the Raging Bull to hitherto unexplored territory."
     },
     {
       "title": "BMW",
       "image": "/image/BMW.jpg",
-      "description": "Cars"
+      "description": "The BMW i8 is ready to revolutionise its vehicle class. As the first sports car with the consumption and emission values of a compact car. The strength of the plug-in hybrid lies, among other factors, in the perfect synchronisation of electric motor and combustion engine, which makes itself apparent in maximum efficiency and dynamics on the road. The first sports car that even accelerates the zeitgeist."
+    },
+    {
+      "title": "Audi",
+      "image": "/image/audi.jpg",
+      "description": "Its whole appearance is energetic. Visibly more expressive. Thanks to the optional Audi Matrix LED headlights in 3D design with characteristic horizontal and vertical elements. Starting at the front and continued visually in the Singleframe and on the bonnet. Futuristic, progressive. Made up of single light emitting diodes, recognising oncoming traffic and optimising the illumination of the surrounding area. The Audi TT Coupé – one of the most progressive sports cars of our time."
     }
   ]
 }

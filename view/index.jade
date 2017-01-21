@@ -1,0 +1,30 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        title Car Blog
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css')
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js')
+        link(rel='stylesheet', href='../css/main.css')
+        script(src='js/post.js')
+    body
+        div.container
+            div#header.row
+                div#logo.col-lg-4
+                    img(src='../image/logo.jpg', height='82', width='213')
+                div#search.col-lg-4
+                    input.form-control(placeholder='Enter name of post')
+                div#authorization.col-lg-4
+                    button.btn-primary(type='button') Sign in
+                    button.btn-primary(type='button') Registration
+            div#content.row
+                hr
+                -for post in posts['posts']
+                    div.post.col-lg-3
+                        h3 #{post.title}
+                        img(src= post.image)
+                        p #{post.description}
+
+
