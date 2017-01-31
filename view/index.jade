@@ -18,7 +18,7 @@ html(lang='en')
                     a(href="/")
                         img(src='../image/logo.png', height='82', width='213')
                 div#search.col-lg-4
-                    input.form-control(placeholder='Enter keywords to search...')(ng-model="input")
+                    input.form-control(placeholder='Enter keywords to search...' ng-model="input")
                 div#authorization.col-lg-3
                     form.form-inline
                         div.form-group
@@ -30,16 +30,17 @@ html(lang='en')
                         button.btn.btn-default(type='submit') Sign in
                         button.btn.btn-default(type='submit') Sign up
             hr
-            div#content.row
-                div(ng-repeat="post in posts | filter : input | startFrom: startingItem() | limitTo: itemsPerPage")
-                    div.post.col-lg-4
-                        h3 {{post.title}}
-                        img(src='{{post.image}}')
-                        p {{post.description}}
-            div#pagination
-                button.pull-left.btn.btn-primary.btn-sm(ng-disabled='firstPage()', ng-click='pageBack()') Назад
-                span#pagesNumber {{currentPage+1}} из {{numberOfPages()}}
-                button.pull-right.btn.btn-primary.btn-sm(ng-disabled='lastPage()', ng-click='pageForward()') Вперед
+            block content
+                div#content.row
+                    div(ng-repeat="post in posts | filter : input | startFrom: startingItem(0) | limitTo: itemsPerPage")
+                        div.post.col-lg-4
+                            h3 {{post.title}}
+                            img(src='{{post.image}}')
+                            p {{post.description}}
+                div#pagination
+                    button.pull-left.btn.btn-primary.btn-sm(ng-disabled='firstPage()', ng-click='pageBack()') Назад
+                    span#pagesNumber {{currentPage+1}} из {{numberOfPages()}}
+                    button.pull-right.btn.btn-primary.btn-sm(ng-disabled='lastPage()', ng-click='pageForward()') Вперед
 
 
 

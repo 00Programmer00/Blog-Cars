@@ -22,6 +22,10 @@ server.get("/posts", function (req,res) {
     });
 });
 
+server.get("/addNewPost", function (req,res) {
+    res.render('post');
+});
+
 
 
 server.listen(3000);
