@@ -7,24 +7,39 @@ html(lang='en')
         link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css')
         link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css')
         script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js')
+        script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js")
+        script(src='js/ng.js' defer)
         link(rel='stylesheet', href='../css/main.css')
-        script(src='js/post.js')
-    body
-        div.container
+
+    body(ng-app="app")
+        div.container(ng-controller="postsCtrl" )
             div#header.row
                 div#logo.col-lg-4
-                    img(src='../image/logo.jpg', height='82', width='213')
+                    a(href="/")
+                        img(src='../image/logo.png', height='82', width='213')
                 div#search.col-lg-4
-                    input.form-control(placeholder='Enter name of post')
-                div#authorization.col-lg-4
-                    button.btn-primary(type='button') Sign in
-                    button.btn-primary(type='button') Registration
+                    input.form-control(placeholder='Enter keywords to search...')(ng-model="input")
+                div#authorization.col-lg-3
+                    form.form-inline
+                        div.form-group
+                            label(for='exampleInputName2')
+                            input#exampleInputName2.form-control(type='text', placeholder='login')
+                        div.form-group
+                            label(for='exampleInputEmail2')
+                            input#exampleInputEmail2.form-control(type='email', placeholder='password')
+                        button.btn.btn-default(type='submit') Sign in
+                        button.btn.btn-default(type='submit') Sign up
+            hr
             div#content.row
-                hr
-                -for post in posts['posts']
-                    div.post.col-lg-3
-                        h3 #{post.title}
-                        img(src= post.image)
-                        p #{post.description}
+                div(ng-repeat="post in posts | filter : input | startFrom: startingItem() | limitTo: itemsPerPage")
+                    div.post.col-lg-4
+                        h3 {{post.title}}
+                        img(src='{{post.image}}')
+                        p {{post.description}}
+            div#pagination
+                button.pull-left.btn.btn-primary.btn-sm(ng-disabled='firstPage()', ng-click='pageBack()') Назад
+                span#pagesNumber {{currentPage+1}} из {{numberOfPages()}}
+                button.pull-right.btn.btn-primary.btn-sm(ng-disabled='lastPage()', ng-click='pageForward()') Вперед
+
 
 

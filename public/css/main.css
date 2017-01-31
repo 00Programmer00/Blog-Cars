@@ -15,25 +15,29 @@ body {
 }
 
 .post{
-    background-color: mediumpurple;
+    color: white;
     text-align: center;
-    /*border: 4px solid black;*/
-    margin-right: 90px;
-    margin-top: 50px;
+    margin-top: 10px;
+}
+
+.post:hover h3{
+    color:red;
+    cursor: pointer;
 }
 
 .post:hover{
-    border: 2px solid red;
+
     cursor: pointer;
 }
 
 .post p{
+    position: relative ;
     margin-top: 20px;
     text-align: justify;
+
 }
 
 #header{
-
     background-size: cover;
 }
 
@@ -42,7 +46,33 @@ body {
     margin-top: 30px;
 }
 
+#authorization button{
+    margin-right: 15px;
+    margin-top: 5px;
+}
+
+#authorization input{
+    margin-bottom: 10px;
+}
+
 #search{
     margin-top: 30px;
 }
 
+#pagination{
+    text-align: center;
+    margin-top: 40px;
+}
+
+#pagesNumber{
+    color: white;
+
+}
+
+#content{
+
+}
+
+#logo:hover{
+    cursor: pointer;
+}
