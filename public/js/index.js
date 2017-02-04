@@ -1,16 +1,8 @@
 var app = angular.module("app",[]);
 
-app.filter('startFrom', function(){
-    return function(input, start){
-        start = +start;
-        return input.slice(start);
-    }
-});
+app.controller("postsCtrl", function ($scope, getPosts) {
 
-app.controller("postsCtrl", function ($scope, $http) {
-    $http.get("/posts")
-        .then(function(response){
-            $scope.posts = response.data.posts;
+            $scope.posts = getPosts.postArray;
 
             $scope.currentPage = 0;
             $scope.itemsPerPage = 3;
@@ -35,4 +27,18 @@ app.controller("postsCtrl", function ($scope, $http) {
                 $scope.currentPage = $scope.currentPage + 1;
             }
         });
+
+app.service("getPosts", function ($scope, $http) {
+    $http.get("/posts")
+        .then(function(response){
+            $scope.postArray = response.data.posts;
+        });
+    return $scope.postArray;
+});
+
+app.filter('startFrom', function(){
+    return function(input, start){
+        start = +start;
+        return input.slice(start);
+    }
 });
